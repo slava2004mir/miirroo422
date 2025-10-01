@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f8f9fa;
+        margin: 20px;
+    }
+
+    form {
+        margin-bottom: 20px;
+    }
+
+    label {
+        font-weight: bold;
+        margin-bottom: 5px;
+        display: inline-block;
+        font-style: italic;
+    }
+
+    input[type="text"] {
+        padding: 10px;
+        width: calc(100% - 22px);
+        margin-bottom: 10px;
+        border: 1px solid rgb(211, 190, 205);
+        border-radius: 5px;
+    }
+
+    button {
+        padding: 10px 15px;
+        background-color: rgb(226, 96, 189);
+        color: white;
+        border: none;
+        border-radius: 5px;
+        transition: background-color 0.3s;
+    }
+    
+    p {
+        font-size: 1.2em;
+        font-weight: bold;
+        font-style: italic;
+    }
+
+    ul {
+        list-style-type: none;
+        padding-left: 0;
+    }
+
+    li {
+        background-color: #ffffff;
+        padding: 10px;
+        margin-bottom: 5px;
+        border-radius: 5px;
+        display: flex;
+        justify-content: space-between; 
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    input[type="checkbox"] {
+        transform: scale(1.2);
+        accent-color: rgb(226, 96, 189);
+    }
+</style>
+<body>
+    <form>
+        <label for="name">Название торта</label> <br/>
+        <input 
+            type="text"
+            placeholder="название торта"
+            id="name"> <br/>
+    
+        <button id="add" onclick="add()" type="button">Добавить</button>    
+    </form>
+
+    <div>
+        <p>Заказы</p>
+
+        <ul id="orders">
+            <li>Молочная девочка <input type="checkbox"></li>
+            <li>Молочный ломтик <input type="checkbox"></li>
+            <li>Рафаэлло <input type="checkbox"></li>
+        </ul>
+    </div>
+
+    <script>
+        //console.log('Miro');
+
+        let nameInput = document.getElementById('name');
+
+        function add() {
+        //    console.log(nameInput.value)
+        }
+    </script>
+</body>
+</html>
