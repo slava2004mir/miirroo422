@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Document</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        margin: 0;
+        background-color: #f4f4f4;
+    }
+
+    p {
+        font-size: 24px;
+        color: #333;
+        margin-bottom: 20px;
+    }
+
+    #MagicalButton {
+        padding: 10px 20px;
+        font-size: 16px;
+        color: white;
+        background-color: #9adada;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        margin-bottom: 20px;
+    }
+
+    #MagicalButton:hover {
+        background-color: #59b1b1;
+    }
+
+    .box {
+        width: 200px;
+        height: 200px;
+        background-color: rgb(197, 99, 164);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        font-size: 20px;
+        color: #333;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+        margin-bottom: 20px;
+        cursor: pointer; /* Чтобы показать, что элемент кликабельный */
+        user-select: none; /* Чтобы текст не выделялся по ошибке */
+    }
+
+    .box:hover {
+        transform: scale(1.05);
+    }
+
+    #clickCount {
+        font-size: 20px;
+        color: #333;
+    }
+</style>
+</head>
+<body>
+    <p>Магическая кнопка</p>
+    <button id='MagicalButton'>Хочешь тортик?</button>
+    <div id="CB" class="box">Подпишись</div>
+    <div id="clickCount">Нажатий: 0</div>
+
+    <script>
+        const button = document.getElementById('MagicalButton');
+        const box1 = document.getElementById('CB');
+        const clickCountDisplay = document.getElementById('clickCount');
+        let isColorChanged = false;
+        let clickCount = 0;
+
+        button.addEventListener('click', function() {
+            if (!isColorChanged) {
+                box1.style.backgroundColor = 'rgb(252, 161, 222)';
+                box1.textContent = 'tg: @mirocakestomsk';
+                isColorChanged = true;
+            } else {
+                box1.style.backgroundColor = 'rgb(197, 99, 164)';
+                box1.textContent = 'Подпишись';
+                isColorChanged = false;
+            }
+            clickCount++;
+            clickCountDisplay.textContent = 'Нажатий: ' + clickCount;
+        });
+
+        box1.addEventListener('click', () => {
+            window.open('https://t.me/mirocakestomsk', '_blank', 'noopener');
+        });
+    </script>
+</body>
+</html>
